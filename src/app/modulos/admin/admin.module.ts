@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 import { AdminComponent } from './admin.component';
 import { NotFoundComponent } from './vistas/not-found/not-found.component';
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     EmpresasModule,
     ServidoresModule,
     UsuariosModule,
+    Ng4LoadingSpinnerModule.forRoot(),
     RouterModule.forChild(appRoutes),
   ],
   providers: [

@@ -31,6 +31,7 @@ export class LoginComponent {
                 this.spinnerService.hide();
                 this.router.navigate(['/admin']);
             }, err =>{
+                this.openModal();
                 this.spinnerService.hide();
             });
         }
@@ -40,7 +41,7 @@ export class LoginComponent {
         this.display='block'; 
      }
 
-    onCloseHandled(){
+    closeModal(){
         this.display='none'; 
      }
 }

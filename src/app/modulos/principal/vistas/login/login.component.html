@@ -34,14 +34,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Model Title</h4>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Error al Iniciar Sesión</h4>
       </div>
       <div class="modal-body">
-        <p>Model body text</p>
+        <p>Error al iniciar Sesión, verificar Correo y Contraseña. Volver a intentar más tarde.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+        <button type="button" class="btn btn-default" (click)="closeModal()" >Close</button>
       </div>
     </div>
   </div>

@@ -1,0 +1,50 @@
+
+<body class="hold-transition login-page" style="background-color: transparent;">
+  <div class="login-box">
+
+      <div class="login-box-body" style="background-color: #D2D3DE;">
+              <div class="login-logo">
+                      <a href="../../index2.html"><b>Monitoreo</b>VRE</a>
+                    </div>
+        <p class="login-box-msg">Entrar Para Poder Iniciar Sesión</p>
+        
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <div class="form-group has-feedback">
+            <input type="email" class="form-control" placeholder="Correo" name="email" [(ngModel)]="email" required>
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="password" class="form-control" placeholder="Contraseña" name="password" [(ngModel)]="password" required>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar Sesión</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+</body>
+
+<ng4-loading-spinner> </ng4-loading-spinner>
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Model Title</h4>
+      </div>
+      <div class="modal-body">
+        <p>Model body text</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

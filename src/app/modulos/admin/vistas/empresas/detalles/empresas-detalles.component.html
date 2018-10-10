@@ -1,50 +1,54 @@
+<section class="content-header">
+    <h1>
+        Empresa
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="/admin/empresas">Empresas</a></li>
+        <li class="active">Detalles</li>
+    </ol>
+</section>
 <section class="content">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Crear Empresa</h3>
-                    </div>
-                    <div class="box-body">
-                        <form #f="ngForm" (ngSubmit)="editarEmpresa(f)">
-                            <div class="form-group">
-                                <label>Nombre Empresa:</label>
-                                {{nombre}}
-                            </div>
-                            <div class="form-group">
-                                <label>Domicilio Empresa:</label>
-                                {{direccion}}
-                            </div>
-                            <div class="form-group">
-                                <label>Descripción Empresa:</label>
-                                {{descripcion}}
-                            </div>
-                            <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">Guardar Empresa</button>
-                            </div>
-                        </form>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Detalles Empresa</h3>
+                </div>
+                <div class="box-body">
+                    <dl>
+                        <dt>Nombre Empresa:</dt>
+                        <dd>{{nombre}}</dd>
+                        <dt>Domicilio Empresa:</dt>
+                        <dd>{{direccion}}</dd>
+                        <dt>Descripción Empresa:</dt>
+                        <dd>{{descripcion}}<dd>
+                    </dl>
+                    <div class="box-footer">
+                        <button class="btn btn-primary" (click)="editarEmpresa()">Editar Empresa</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <ng4-loading-spinner [timeout]="100000"> </ng4-loading-spinner>
-    
-    <div class="backdrop" [ngStyle]="{'display':display}"></div>
-    <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">{{modal_title}}</h4>
-          </div>
-          <div class="modal-body">
-            <p>{{modal_body}}</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" (click)="closeModal()" >Ok</button>
-          </div>
-        </div>
-      </div>
     </div>
+</section>
+
+<ng4-loading-spinner [timeout]="100000"> </ng4-loading-spinner>
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{modal_title}}</h4>
+            </div>
+            <div class="modal-body">
+                <p>{{modal_body}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="closeModal()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

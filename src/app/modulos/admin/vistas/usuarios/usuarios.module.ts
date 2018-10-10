@@ -5,7 +5,7 @@ import { UsuariosComponent } from './usuarios.component';
 import { UsuariosAgregarComponent } from './agregar/usuarios-agregar.component';
 
 const appRoutes: Routes = [
-    { path: 'usuarios', component: UsuariosComponent,
+    { path: '', component: UsuariosComponent,
     children:[
       {path: 'agregar', component: UsuariosAgregarComponent},
     ]}

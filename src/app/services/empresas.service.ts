@@ -31,4 +31,5 @@ export class EmpresasServices{
     deleteEmpresa(id_empresa){
         return this.httpCliente.delete(this.url+id_empresa);
     }
+
 }

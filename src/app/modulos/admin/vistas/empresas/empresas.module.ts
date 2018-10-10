@@ -8,17 +8,17 @@ import { EmpresasComponent } from './empresas.component';
 
 import { EmpresasAgregarComponent } from './agregar/empresas-agregar.component';
 import { EmpresasServices } from '../../../../services/empresas.service';
+import { EmpresaListarComponent } from './listar/empresas-listar.component';
 
 const appRoutes: Routes = [
-    { path: '', component: EmpresasComponent,
-    children:[
-      {path: 'agregar', component: EmpresasAgregarComponent},
-    ]}
+  {path: '', component: EmpresaListarComponent},
+  {path: 'agregar', component: EmpresasAgregarComponent}
   ];
 
 @NgModule({
     declarations: [
       EmpresasComponent,
+      EmpresaListarComponent,
       EmpresasAgregarComponent
     ],
     imports: [
@@ -34,5 +34,6 @@ const appRoutes: Routes = [
   })
 
 export class EmpresasModule{
+
 
 }

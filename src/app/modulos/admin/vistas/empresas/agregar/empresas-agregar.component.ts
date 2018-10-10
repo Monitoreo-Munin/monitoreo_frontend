@@ -34,6 +34,7 @@ export class EmpresasAgregarComponent{
             this.spinnerService.show()
             this.empresaService.postEmpresa({"nombre":this.nombre,"direccion":this.direccion,"descripcion":this.descripcion}).toPromise()
             .then((res)=>{
+                this.resetearDatos()
                 this.spinnerService.hide();
                 this.openModal("Guardar Empresa", "La Empresa "+this.nombre+ " se ha guardado con exito.");
             })
@@ -45,6 +46,12 @@ export class EmpresasAgregarComponent{
             this.openModal("Error Formulario", "Verificar que todos los campos no se encuentren vacios (Nombre, Direccion, Descripción).");
         }
         
+    }
+
+    resetearDatos(){
+        this.nombre = "";
+        this.direccion = "";
+        this.descripcion = "";
     }
 
     openModal(title,body){

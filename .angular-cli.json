@@ -27,14 +27,19 @@
         "./dist/css/skins/_all-skins.min.css",
         "./dist/morris.js/morris.css",
         "./dist/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css",
-        "./dist/plugins/iCheck/square/blue.css"
+        "./dist/plugins/iCheck/square/blue.css",
+        "./dist/datatables.net-bs/css/dataTables.bootstrap.min.css"
       ],
       "scripts": [
         "./dist/jquery/dist/jquery.min.js",
         "./dist/bootstrap/dist/js/bootstrap.min.js",
         "./dist/moment/min/moment.min.js",
         "./dist/fastclick/lib/fastclick.js",
-        "./dist/js/adminlte.min.js"
+        "./dist/js/adminlte.min.js",
+        "./dist/datatables.net/js/jquery.dataTables.min.js",
+        "./dist/datatables.net-bs/js/dataTables.bootstrap.min.js",
+        "./dist/datatables.net/js/table.opcion.js"
+
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

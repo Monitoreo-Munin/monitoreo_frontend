@@ -10,6 +10,5 @@ import { FirebaseAppService } from './object/user/service.firebase';
 })
 export class AppComponent {
 
-  constructor(){
-  }
+  constructor(){}
 }

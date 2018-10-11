@@ -38,7 +38,10 @@
         "./dist/js/adminlte.min.js",
         "./dist/datatables.net/js/jquery.dataTables.min.js",
         "./dist/datatables.net-bs/js/dataTables.bootstrap.min.js",
-        "./dist/datatables.net/js/table.opcion.js"
+        "./dist/datatables.net/js/table.opcion.js",
+        "./dist/plugins/input-mask/jquery.inputmask.js",
+        "./dist/plugins/input-mask/jquery.inputmask.date.extensions.js",
+        "./dist/plugins/input-mask/jquery.inputmask.extensions.js"
 
       ],
       "environmentSource": "environments/environment.ts",

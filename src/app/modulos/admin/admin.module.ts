@@ -17,9 +17,9 @@ const appRoutes: Routes = [
   { path: 'admin', component: AdminComponent,
   children: [ 
     {path: '', component: ContenidoComponent},
-    {path: 'servidores', loadChildren: ()=>ServidoresModule},
-    {path: 'empresas', loadChildren: ()=>EmpresasModule},
-    {path: 'usuarios', loadChildren: ()=>UsuariosModule},
+    {path: '', loadChildren: ()=>ServidoresModule},
+    {path: '', loadChildren: ()=>UsuariosModule},
+    {path: '', loadChildren: ()=>EmpresasModule},
     {path: '**', component: NotFoundComponent},
   ] },
 ];
@@ -29,6 +29,9 @@ const appRoutes: Routes = [
     AdminComponent,
     ContenidoComponent,
     NotFoundComponent
+  ],
+  exports:[
+    RouterModule
   ],
   imports: [
     CommonModule,

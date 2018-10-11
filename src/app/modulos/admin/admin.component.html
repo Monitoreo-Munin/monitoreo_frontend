@@ -1,9 +1,9 @@
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
     <header class="main-header">
-      <a href="/" class="logo">
-        <span class="logo-mini"><b>A</b>LT</span>
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+      <a href="/admin" class="logo">
+        <span class="logo-mini"><b>A</b>RE</span>
+        <span class="logo-lg"><b>Admin</b>VRE</span>
       </a>
       <nav class="navbar navbar-static-top">
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -13,12 +13,14 @@
           <ul class="nav navbar-nav">
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="hidden-xs">Alexander Pierce</span>
+                  <img src="http://www.mabbscabs.co.uk/assets/images/user-160x160.png" class="user-image" alt="User Image">
+                <span class="hidden-xs">{{nombre_user}}</span>
               </a>
               <ul class="dropdown-menu">
                 <li class="user-header">
+                  <img src="http://www.mabbscabs.co.uk/assets/images/user-160x160.png" class="img-circle" alt="User Image">
                   <p>
-                    Alexander Pierce - Web Developer
+                    {{nombre_user}}
                     <small>Member since Nov. 2012</small>
                   </p>
                 </li>
@@ -95,9 +97,9 @@
         </ul>
       </section>
     </aside>
-  
-    <div class="content-wrapper">  
-      <section class="content">      
+
+    <div class="content-wrapper">
+      <section class="content">
         <router-outlet></router-outlet>
       </section>
     </div>
@@ -109,9 +111,8 @@
       <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
       reserved.
     </footer>
-  
+
     <div class="control-sidebar-bg"></div>
   </div>
-  
-</body>
 
+</body>

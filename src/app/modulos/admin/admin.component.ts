@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FirebaseAppService } from '../../object/user/service.firebase';
 import { LocalStorageSession } from '../../object/user/session.storage';
@@ -8,23 +8,29 @@ import { LocalStorageSession } from '../../object/user/session.storage';
   templateUrl: './admin.component.html'
 })
 
-export class AdminComponent {
-  
+export class AdminComponent implements OnInit {
+
+  public nombre_user = "";
+
   constructor(
     private localStorage: LocalStorageSession,
     private serviceFirebase: FirebaseAppService,
     private router: Router
-  ){
-    if(this.localStorage.getSessionActual()){
+  ) {
+    if (this.localStorage.getSessionActual()) {
       this.router.navigate(['/login']);
     }
   }
 
-  singOut(){
+  ngOnInit() {
+    this.nombre_user = this.localStorage.getNombreActual();
+  }
+
+  singOut() {
     this.serviceFirebase.logout()
-      .then((res) =>{
+      .then((res) => {
         this.router.navigate(['/']);
-      }, (err) =>{
+      }, (err) => {
 
       })
   }

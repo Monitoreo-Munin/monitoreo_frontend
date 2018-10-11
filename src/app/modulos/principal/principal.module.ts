@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 
@@ -11,12 +11,14 @@ import { ContenidoComponent } from './vistas/contenido/contenido.component';
 import { PrincipalComponent } from './principal.component';
 
 const appRoutes: Routes = [
-  { path: '', component: PrincipalComponent,
-  children: [ 
-    {path: '', component: ContenidoComponent},
-    {path: 'login', component: LoginComponent},
-    {path: '**', component: NotFoundComponent},
-  ]},
+  {
+    path: '', component: PrincipalComponent,
+    children: [
+      { path: '', component: ContenidoComponent },
+      { path: 'login', component: LoginComponent },
+      { path: '**', component: NotFoundComponent }
+    ]
+  },
 ];
 
 @NgModule({
@@ -25,6 +27,9 @@ const appRoutes: Routes = [
     ContenidoComponent,
     LoginComponent,
     NotFoundComponent
+  ],
+  exports:[
+    RouterModule
   ],
   imports: [
     CommonModule,

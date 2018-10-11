@@ -46,6 +46,13 @@ export class LocalStorageSession {
         localStorage.removeItem(this.Session)
     }
 
+    getNombreActual(){
+        var actual:any = localStorage.getItem(this.Session);
+        actual = JSON.parse(actual)
+        var bytes  = CryptoJS.AES.decrypt(actual.nombre.toString(), this.key);
+        return bytes.toString(CryptoJS.enc.Utf8);
+    }
+
     getSessionActual(): boolean{
         var actual:any = localStorage.getItem(this.Session);
         if(actual == null){

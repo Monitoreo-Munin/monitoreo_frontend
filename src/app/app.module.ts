@@ -46,8 +46,11 @@ import { ServidoresService } from './services/servidores.service';
 
 
 const appRoutes: Routes = [
-  { path: '', loadChildren: ()=> PrincipalModule },
-  { path: 'admin', loadChildren: ()=> AdminModule }
+  { path: '', component: AppComponent,
+  children: [ 
+    {path: '', loadChildren: ()=> PrincipalModule},
+    {path: '', loadChildren: ()=> AdminModule},
+  ] },
 ];
 
 @NgModule({

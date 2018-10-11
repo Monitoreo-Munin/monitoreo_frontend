@@ -75,6 +75,7 @@ export class UsuariosAgregarComponent implements OnInit {
     onChangeEmpresa(empresa) {
         this.empresa = Number(empresa);
     }
+    
     enviarUsuarioFB() {
         this.firebaseService.createUser(this.email, this.password)
             .then((res: any) => {

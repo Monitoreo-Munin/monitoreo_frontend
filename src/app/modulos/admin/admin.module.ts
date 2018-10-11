@@ -11,6 +11,7 @@ import { ServidoresModule } from './vistas/servidores/servidores.module';
 import { UsuariosModule } from './vistas/usuarios/usuarios.module';
 import { EmpresasModule } from './vistas/empresas/empresas.module';
 import { EmpresasServices } from '../../services/empresas.service';
+import { UsuariosService } from '../../services/usuarios.service';
 
 const appRoutes: Routes = [
   { path: 'admin', component: AdminComponent,
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     RouterModule.forChild(appRoutes),
   ],
   providers: [
-    EmpresasServices
+    EmpresasServices,
+    UsuariosService
   ],
   bootstrap: []
 })

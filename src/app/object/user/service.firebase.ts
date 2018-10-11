@@ -55,4 +55,18 @@ export class FirebaseAppService {
         })
         
     }
+
+
+    createUser(email, password):Promise<any> {
+        return new Promise((resolve, reject)=>{
+            this.af.auth.createUserWithEmailAndPassword(email,password)
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        })
+        
+    }
 }

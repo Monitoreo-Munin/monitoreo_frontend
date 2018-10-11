@@ -32,6 +32,7 @@ export class EmpresaDetallesComponent implements OnInit, OnDestroy{
     }
 
     ngOnInit() {
+        this.spinnerService.show();
         this.sub = this.route.params.subscribe(
             (res=>{
                 this.obtenerEmpresa(res.id);
@@ -50,9 +51,12 @@ export class EmpresaDetallesComponent implements OnInit, OnDestroy{
                 this.nombre = res.response[0].nombre;
                 this.direccion = res.response[0].direccion;
                 this.descripcion = res.response[0].descripcion;
-            }
 
-            this.spinnerService.hide();
+                this.spinnerService.hide();
+            }else{
+                this.spinnerService.hide();
+                this.openModal("Error obtener Empresa","Error al obtener los datos de la Empresa. Volver a intenter más tarde.")
+            }
         })
         .catch((err)=>{
             this.openModal("Error obtener Empresa","Error al obtener los datos de la Empresa. Volver a intenter más tarde.")

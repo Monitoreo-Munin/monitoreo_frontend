@@ -74,9 +74,12 @@ export class EmpresaListarComponent{
         .then((res:any)=>{
             if(res.status == "200"){
                 this.empresas.splice(this.index,1);
+                this.spinnerService.hide();
                 this.openModal("Empresa Eliminada","Se eliminó correctamente la empresa " + this.empresa.nombre +".");
+            }else{
+                this.openModal("Error Eliminar Empresas","Error al eliminar las empresa " + this.empresa.nombre + ", volver a intentar más tarde.");
+                this.spinnerService.hide();
             }
-            this.spinnerService.hide();
         })
         .catch((err)=>{
             this.openModal("Error Eliminar Empresas","Error al eliminar las empresa " + this.empresa.nombre + ", volver a intentar más tarde.");

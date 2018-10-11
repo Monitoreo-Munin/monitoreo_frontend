@@ -65,9 +65,7 @@ export class ServidoresAgregarComponent implements OnInit {
 
         var idIp: any = document.getElementById('ip_serv')
         this.ip = String(idIp.value);
-
-        alert(this.ip)
-
+        
         if (form.valid) {
             if (this.ip.match('^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$')) {
                 this.enviarDatos();
@@ -85,9 +83,9 @@ export class ServidoresAgregarComponent implements OnInit {
             .then((res: any) => {
                 alert(JSON.stringify(res))
                 if (res.status == "200") {
-                    this.restaurarDatos();
                     this.spinnerService.hide();
                     this.openModal("Servidor Guardado", "El servidor " + this.nombre + " se guardó de manera exitosa.");
+                    this.restaurarDatos();
                 }else{
                     this.spinnerService.hide();
                     this.openModal("Error Servidor", "Error al guardar el servidor. Volver a intentar más tarde");
@@ -104,7 +102,8 @@ export class ServidoresAgregarComponent implements OnInit {
         this.nombre = "";
         this.descripcion = "";
         this.ip = "";
-        this.empresa = 0;
+        var idIp: any = document.getElementById('ip_serv')
+        idIp.value = "";
     }
     openModal(title, body) {
         this.modal_title = title;

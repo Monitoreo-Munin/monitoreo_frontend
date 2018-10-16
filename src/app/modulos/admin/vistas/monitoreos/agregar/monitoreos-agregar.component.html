@@ -1,0 +1,53 @@
+<section class="content-header">
+        <h1>
+            Monitoreos
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/admin"><i class="fa fa-dashboard"></i> Inicio</a></li>
+            <li><a href="/admin/monitoreos">Monitoreos</a></li>
+            <li class="active">Agregar</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Crear Monitoreo</h3>
+                    </div>
+                    <div class="box-body">
+                        <form #f="ngForm" (ngSubmit)="guardarMonitoreo(f)">
+                            <div class="form-group">
+                                <label>Nombre Empresa:</label>
+                                <input type="text" class="form-control" id="" placeholder="mysql" name="nombre"
+                                    [(ngModel)]="nombre" required>
+                            </div>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Guardar Empresa</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <ng4-loading-spinner [timeout]="100000"> </ng4-loading-spinner>
+    
+    <div class="backdrop" [ngStyle]="{'display':display}"></div>
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">{{modal_title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{modal_body}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="closeModal()">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>

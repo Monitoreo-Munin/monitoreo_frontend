@@ -14,8 +14,8 @@ export class AdminComponent implements OnInit {
 
   constructor(
     private localStorage: LocalStorageSession,
+    private router: Router,
     private serviceFirebase: FirebaseAppService,
-    private router: Router
   ) {
     if (this.localStorage.getSessionActual()) {
       this.router.navigate(['/login']);

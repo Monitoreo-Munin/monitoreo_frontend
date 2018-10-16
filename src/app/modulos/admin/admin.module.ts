@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+'@angular/platform-browser/animations';
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { AdminComponent } from './admin.component';
 import { NotFoundComponent } from './vistas/not-found/not-found.component';
@@ -13,6 +18,11 @@ import { EmpresasModule } from './vistas/empresas/empresas.module';
 import { EmpresasServices } from '../../services/empresas.service';
 import { UsuariosService } from '../../services/usuarios.service';
 
+import { ApacheComponent } from './vistas/apache/apache.component';
+import { ApacheService } from '../../services/apache.service';
+import { MonitoreoServices } from '../../services/monitoreos.service';
+import { MonitoreosModule } from './vistas/monitoreos/monitoreos.module';
+
 const appRoutes: Routes = [
   { path: 'admin', component: AdminComponent,
   children: [ 
@@ -20,6 +30,8 @@ const appRoutes: Routes = [
     {path: '', loadChildren: ()=>ServidoresModule},
     {path: '', loadChildren: ()=>UsuariosModule},
     {path: '', loadChildren: ()=>EmpresasModule},
+    {path: '', loadChildren: ()=>MonitoreosModule},
+    {path: 'apache', component: ApacheComponent},
     {path: '**', component: NotFoundComponent},
   ] },
 ];
@@ -28,24 +40,29 @@ const appRoutes: Routes = [
   declarations: [
     AdminComponent,
     ContenidoComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ApacheComponent
   ],
   exports:[
     RouterModule
   ],
   imports: [
     CommonModule,
-    EmpresasModule,
-    ServidoresModule,
-    UsuariosModule,
+    FormsModule,
+    NgxChartsModule,
+    NgCircleProgressModule.forRoot(),
     Ng4LoadingSpinnerModule.forRoot(),
     RouterModule.forChild(appRoutes),
   ],
   providers: [
     EmpresasServices,
-    UsuariosService
+    UsuariosService,
+    MonitoreoServices,
+    ApacheService
   ],
   bootstrap: []
 })
 
-export class AdminModule { }
+export class AdminModule { 
+  
+}

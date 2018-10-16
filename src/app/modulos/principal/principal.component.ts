@@ -8,7 +8,6 @@ import { FirebaseAppService } from '../../object/user/service.firebase';
   templateUrl: './principal.component.html'
 })
 export class PrincipalComponent {
-  
   constructor(
     private router: Router,
     private localStorage: LocalStorageSession,

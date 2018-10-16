@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
-
 
 import { LoginComponent } from './vistas/login/login.component';
 import { NotFoundComponent } from './vistas/not-found/not-found.component';
 import { ContenidoComponent } from './vistas/contenido/contenido.component';
 import { PrincipalComponent } from './principal.component';
+import { LocalStorageSession } from '../../object/user/session.storage';
 
 const appRoutes: Routes = [
   {
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     LoginComponent,
     NotFoundComponent
   ],
-  exports:[
+  exports: [
     RouterModule
   ],
   imports: [
@@ -42,4 +42,6 @@ const appRoutes: Routes = [
   bootstrap: []
 })
 
-export class PrincipalModule { }
+export class PrincipalModule {
+
+}

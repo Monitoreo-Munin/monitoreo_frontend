@@ -1,0 +1,63 @@
+<section class="content-header">
+        <h1>
+            Tipo de Monitoreos
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/admin"><i class="fa fa-dashboard"></i> Inicio</a></li>
+            <li class="active">Lista</li>
+        </ol>
+    </section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Lista Monitoreos</h3>
+                </div>
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table id="tablaLista" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let monitoreo of monitoreos; let i = index" [attr.data-index]="i">
+                                        <td>{{monitoreo.nombre}}</td>
+                                        <td>
+                                            <a class="btn btn-social-icon btn-danger" (click)="eliminarMonitoreoModal(i,monitoreo)"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng4-loading-spinner [timeout]="100000"> </ng4-loading-spinner>
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">{{modal_title}}</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{modal_body}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" (click)="closeModal()" >Cerrar</button>
+        <div *ngIf="eliminar_mon">
+            <button type="button" class="btn btn-danger" (click)="closeModalEliminar()" >Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

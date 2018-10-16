@@ -53,6 +53,13 @@ export class LocalStorageSession {
         return bytes.toString(CryptoJS.enc.Utf8);
     }
 
+    getUidActual(){
+        var actual:any = localStorage.getItem(this.Session);
+        actual = JSON.parse(actual)
+        var bytes  = CryptoJS.AES.decrypt(actual.uid.toString(), this.key);
+        return bytes.toString(CryptoJS.enc.Utf8);
+    }
+
     getSessionActual(): boolean{
         var actual:any = localStorage.getItem(this.Session);
         if(actual == null){

@@ -4,27 +4,26 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
-import { UsuariosComponent } from './usuarios.component';
-import { UsuariosAgregarComponent } from './agregar/usuarios-agregar.component';
-import { UsuariosService } from '../../../../services/usuarios.service';
-import { UsuariosListarComponent } from './listar/usuarios-listar.component';
 import { LocalStorageSession } from '../../../../object/user/session.storage';
+import { MonitoreosListarComponent } from './listar/monitoreos-listas.component';
+import { MonitoreosComponent } from './monitoreos.component';
+import { MonitoreosAgregarComponent } from './agregar/monitoreos-agregar.component';
 
 const appRoutes: Routes = [
   {
-    path: 'usuarios', component: UsuariosComponent,
+    path: 'monitoreos', component: MonitoreosComponent,
     children: [
-      { path: '', component: UsuariosListarComponent },
-      { path: 'agregar', component: UsuariosAgregarComponent },
+      { path: '', component: MonitoreosListarComponent },
+      { path: 'agregar', component: MonitoreosAgregarComponent },
     ]
   }
 ];
 
 @NgModule({
   declarations: [
-    UsuariosComponent,
-    UsuariosAgregarComponent,
-    UsuariosListarComponent
+    MonitoreosComponent,
+    MonitoreosListarComponent,
+    MonitoreosAgregarComponent
   ],
   imports: [
     CommonModule,
@@ -32,13 +31,16 @@ const appRoutes: Routes = [
     Ng4LoadingSpinnerModule.forRoot(),
     RouterModule.forChild(appRoutes),
   ],
+  exports: [
+    RouterModule
+  ],
   providers: [
-    UsuariosService
   ],
   bootstrap: []
 })
 
-export class UsuariosModule {
+export class MonitoreosModule {
+
   constructor(
     private localStorage: LocalStorageSession,
     private router: Router

@@ -31,7 +31,7 @@
         "./dist/datatables.net-bs/css/dataTables.bootstrap.min.css"
       ],
       "scripts": [
-        "./dist/jquery/dist/jquery.min.js",
+        "../node_modules/jquery/dist/jquery.min.js",
         "./dist/bootstrap/dist/js/bootstrap.min.js",
         "./dist/moment/min/moment.min.js",
         "./dist/fastclick/lib/fastclick.js",
@@ -41,7 +41,12 @@
         "./dist/datatables.net/js/table.opcion.js",
         "./dist/plugins/input-mask/jquery.inputmask.js",
         "./dist/plugins/input-mask/jquery.inputmask.date.extensions.js",
-        "./dist/plugins/input-mask/jquery.inputmask.extensions.js"
+        "./dist/plugins/input-mask/jquery.inputmask.extensions.js",
+        "./dist/morris.js/morris.min.js",
+        "./dist/raphael/raphael.min.js",
+        "./dist/jquery-knob/js/jquery.knob.js",
+        "./dist/jquery-sparkline/dist/jquery.sparkline.min.js",
+        "./dist/chart.js/src/Chart.Sample.js"
 
       ],
       "environmentSource": "environments/environment.ts",

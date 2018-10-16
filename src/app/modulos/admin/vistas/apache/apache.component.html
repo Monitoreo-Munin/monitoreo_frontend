@@ -1,0 +1,64 @@
+<section class="content-header">
+  <h1>
+    Apache
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="/admin"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">Apache</li>
+  </ol>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-xs-4" *ngFor="let server of servers; let i = index" [attr.data-index]="i">
+      <div class="box">
+        <div class="box-body">
+
+          <div class="col-md-4">
+            <circle-progress [percent]='20' [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+              [outerStrokeColor]="'#4789BC'" [innerStrokeColor]="'#283135'" [animation]="true" [animationDuration]="300"></circle-progress>
+          </div>
+          <div class="col-md-12">
+          <div class="box box-primary collapsed-box">
+            <div class="box-header with-border">
+              <h3 class="box-title">Información</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+                IP: {{server.ip}}
+                <br>
+                Nombre: {{server.nombre}}
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng4-loading-spinner [timeout]="100000"> </ng4-loading-spinner>
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">{{modal_title}}</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{modal_body}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" (click)="closeModal()">Cerrar</button>
+        <div *ngIf="eliminar_emp">
+          <button type="button" class="btn btn-danger" (click)="closeModalEliminar()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

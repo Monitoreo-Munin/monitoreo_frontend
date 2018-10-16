@@ -19,6 +19,8 @@ import {
 } from '@angular/http';
 
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -34,7 +36,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FirebaseAppService } from './object/user/service.firebase';
 import { LocalStorageSession } from './object/user/session.storage';
 import 'rxjs/add/operator/map'
-
 
 import { AdminModule } from './modulos/admin/admin.module';
 import { PrincipalModule } from './modulos/principal/principal.module';
@@ -57,9 +58,11 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
   ],
-  imports: [
+  exports:[
     AdminModule,
-    PrincipalModule,
+    PrincipalModule
+  ],
+  imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
@@ -69,6 +72,14 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpClientModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    }),
     Ng4LoadingSpinnerModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],

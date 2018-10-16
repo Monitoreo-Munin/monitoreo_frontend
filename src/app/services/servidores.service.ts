@@ -21,6 +21,10 @@ export class ServidoresService{
         return this.httpCliente.get(this.url+id_server);
     }
 
+    getServersByUser(id_user){
+        return this.httpCliente.get(this.url+"user/"+id_user);
+    }
+
     postServer(server){
         return this.httpCliente.post(this.url,server);
     }
